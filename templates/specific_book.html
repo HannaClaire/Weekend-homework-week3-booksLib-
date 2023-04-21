@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<nav>
+    <ul>
+        <li class="navLink"> <a href="/books">Home</a></li>
+    </ul>
+</nav> 
+
+<div class="book-container">
+
+<h1>{{book.name}}</h1>
+
+    <div class="book">
+        <h2>Author</h2> <h3>- {%book.author%}</h3> <br>
+        <h2>Genre</h2> <h3>- {%book.genre%}</h3> <br>
+
+    </div>
+</div>
+
