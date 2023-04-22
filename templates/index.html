@@ -7,24 +7,26 @@
 
 <form class="form-inline" action="/books" method="post">
 
-    <label for="name">Book Title</label>
-    <input for="text" name="title" button="title">
+    <label for="title">Book Title</label>
+    <input for="title" name="title" id="title">
     <label for="name">Author</label>
-    <input for="text" name="author" button="Author">
+    <input for="text" name="author" id="Author">
     <label for="name">Genre</label>
-    <input for="text" name="Genre" button="Genre">
+    <input for="text" name="genre" id="genre">
     {# <label for="name">Add Book</label> #}
 
     <input type="submit" value="Add Book">
-
+</form>
 
 
 
     {%for book in books %}
         {# <li><b>{{book.title}}</b>  #}
-        <a href="/books/{{books.index(book) + 1}}"><br><b>{{book.title}}</b></a>
+        <a href="/books/{{books.index(book)}}"><br><b>{{book.title}}</b></a>
     
-
+<form class="form-inline" action="/books/delete/{{book.title}}" method="post">
+    <input type="submit" value="Delete">
+</form>
         {# by {{book.author}}, <i>Genre: </i>{{ book.genre }}</li> #} 
     {% endfor %}
 
